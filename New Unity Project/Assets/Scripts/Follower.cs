@@ -34,6 +34,10 @@ public class Follower : MonoBehaviour
         this.targetPosition = targetPosition;
         this.doneEvent = doneEvent;
     }
+    public void StopPath()
+    {
+        OnEndedPath();
+    }
     void UpdatePath()
     {
         if (seeker.IsDone() && targetPosition != rb.position)
@@ -74,6 +78,8 @@ public class Follower : MonoBehaviour
         }
 
     }
+
+    
 
     void OnEndedPath()
     {
